@@ -1,6 +1,6 @@
-package com.example.uberv.divinote.storage.repository.datastore;
+package com.example.uberv.divinote.data.repository.datastore;
 
-import com.example.uberv.divinote.storage.models.NoteEntity;
+import com.example.uberv.divinote.data.models.NoteEntity;
 
 import java.util.List;
 

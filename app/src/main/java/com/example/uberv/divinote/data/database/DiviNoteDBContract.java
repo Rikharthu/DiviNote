@@ -1,4 +1,4 @@
-package com.example.uberv.divinote.storage.database;
+package com.example.uberv.divinote.data.database;
 
 import android.content.ContentUris;
 import android.net.Uri;

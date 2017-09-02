@@ -1,6 +1,6 @@
-package com.example.uberv.divinote.storage.models.mappers;
+package com.example.uberv.divinote.data.models.mappers;
 
-import com.example.uberv.divinote.storage.models.NoteEntity;
+import com.example.uberv.divinote.data.models.NoteEntity;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
@@ -9,7 +9,6 @@ import java.lang.reflect.Type;
 import java.util.List;
 
 import javax.inject.Inject;
-import javax.inject.Singleton;
 
 public class NoteEntityJsonMapper {
 

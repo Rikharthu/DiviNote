@@ -1,0 +1,19 @@
+Outer layer.
+Presentation package is responsible for everything related to showing things on the screen.
+It includes the whole MVP stack (both UI and Presenter packages even though the belong to different layers)
+
+Is here, where the logic related with views and animations happens.
+It uses no more than a Model View Presenter (MVP from now on), but you can use any other
+pattern like MVC or MVVM. I will not get into details on it, but here fragments and activities
+are only views, there is no logic inside them other than UI logic, and this is where all the
+rendering stuff takes place.
+
+Presenters in this layer are composed with interactors (use cases) that perform the job in a new
+thread outside the main android UI thread, and come back using a callback with the data that will
+be rendered in the view.
+
+Model <--- Presenter <---> View
+
+Uses interactor to communicate with the Domain Layer
+
+- Model represents a ViewModel

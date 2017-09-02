@@ -78,6 +78,30 @@ public class Note {
     }
 
     public static enum Status {
-        COMPLETED, TODO, FINISHED
+        COMPLETED("completed"), TODO("todo"), FINISHED("finished");
+
+        private String mStatus;
+
+        Status(String status) {
+            mStatus = status;
+        }
+
+        @Override
+        public String toString() {
+            return mStatus;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Note{" +
+                "mId=" + mId +
+                ", mCreatedAt=" + mCreatedAt +
+                ", mUpdatedAt=" + mUpdatedAt +
+                ", mRemindAt=" + mRemindAt +
+                ", mStatus=" + mStatus +
+                ", mTitle='" + mTitle + '\'' +
+                ", mDescription='" + mDescription + '\'' +
+                '}';
     }
 }

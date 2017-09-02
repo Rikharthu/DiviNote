@@ -1,18 +1,21 @@
-package com.example.uberv.divinote.storage.models.mappers;
+package com.example.uberv.divinote.data.models.mappers;
 
+import com.example.uberv.divinote.data.models.NoteEntity;
 import com.example.uberv.divinote.domain.models.Note;
-import com.example.uberv.divinote.storage.models.NoteEntity;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
+import javax.inject.Inject;
+
 /**
  * Mapper class used to transform {@Link NoteEntity} to
  */
 public class NoteEntityDataMapper {
 
+    @Inject
     public NoteEntityDataMapper() {
     }
 
@@ -31,6 +34,21 @@ public class NoteEntityDataMapper {
             note.setUpdatedAt(new Date(noteEntity.getUpdatedAt()));
             note.setTitle(noteEntity.getTitle());
             note.setDescription(noteEntity.getDescription());
+            String entityStatus = noteEntity.getStatus();
+            if (entityStatus != null) {
+                switch (entityStatus) {
+                    case NoteEntity.STATUS_COMPLETED:
+                        note.setStatus(Note.Status.COMPLETED);
+                        break;
+                    case NoteEntity.STATUS_FINISHED:
+                        note.setStatus(Note.Status.FINISHED);
+                        break;
+                    case NoteEntity.STATUS_TODO:
+                        note.setStatus(Note.Status.TODO);
+                        break;
+                }
+            } else {
+            }
         }
         return note;
     }

@@ -1,4 +1,4 @@
-package com.example.uberv.divinote.storage.models;
+package com.example.uberv.divinote.data.models;
 
 
 /**
@@ -6,6 +6,11 @@ package com.example.uberv.divinote.storage.models;
  */
 // TODO add  more info
 public class NoteEntity {
+
+    public static final String STATUS_COMPLETED = "completed";
+    public static final String STATUS_TODO = "todo";
+    public static final String STATUS_FINISHED = "finished";
+
     private long mId;
     private long mCreatedAt;
     private long mUpdatedAt;

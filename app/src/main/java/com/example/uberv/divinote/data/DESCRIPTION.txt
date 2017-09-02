@@ -1,0 +1,11 @@
+- Model represents an Entity
+- All data needed for the application comes from this layer through a Repository pattern implementation
+  (The interface is in the domain layer)
+- Ofter a factory pattern is used to pick different data sources depending on certain conditions, such
+  as using Cloud to fetch data or Database/File to present cached data
+  (For instance, when getting a user by id, the disk cache data source will be selected if
+  the user already exists in cache, otherwise the cloud will be queried to retrieve
+  the data and later save it to the disk cache.)
+
+- Data origin is transparent for the client, which doesn't care whether data is coming from a memory,
+  disk or the cloud. It just must be fetched and provided
